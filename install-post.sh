@@ -37,7 +37,9 @@ printf "${UNDERLINE}${GREEN}=== MrUnknown850's Arch Linux post-install script ==
 
 arrowed_prompt "Setting up zsh shell."
 sudo chsh -s /usr/bin/zsh $USER
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+arrowed_prompt "Installing ohmyzsh"
+git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh/ohmyzsh.git ~/.zs
 
 arrowed_prompt "Setting up dotfiles."
 git clone $REPO_URL ~/.dotfiles
@@ -90,7 +92,7 @@ cd ~ && rm -rf ./yay-bin
 
 arrowed_prompt "Post-installation finished!"
 printf "mrunknown850's dotfile has been successfully deployed onto your system.
-Reboot to enter `hyprland`. If any issue occured during the installation process
+Reboot to enter ${UNDERLINE}hyprland${NC}. If any issue occured during the installation process
 or routine operations, submit an ${BOLD}Issue${NC} on the github repository.
 -- ${UNDERLINE} $REPO_URL ${NC}
 "

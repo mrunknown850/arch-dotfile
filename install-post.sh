@@ -30,14 +30,20 @@ B_WHITE='\033[1;37m'
 
 # Helpers
 arrowed_prompt() { echo -e "${B_GREEN}==> ${NC} $1"; }
-REPO_URL="https://github.com/mrunknown850/arch-dotfile/master"
+REPO_URL="https://github.com/mrunknown850/arch-dotfile"
 
 
 printf "${UNDERLINE}${GREEN}=== MrUnknown850's Arch Linux post-install script ===${NC}"
+
+arrowed_prompt "Setting up zsh shell."
+sudo chsh -s /usr/bin/zsh $USER
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 arrowed_prompt "Setting up dotfiles."
 git clone $REPO_URL ~/.dotfiles
 cd ~/.dotfiles
-stow configurations
+mkdir ~/.config
+stow -S --adopt configurations
 
 arrowed_prompt "Generating color scheme."
 matugen image ./image/wallpaper.jpg -m dark
@@ -55,7 +61,6 @@ sudo systemctl enable --now tlp.service
 
 arrowed_prompt "Enabling user services."
 systemctl --user enable --now batsignal.service
-systemctl --user enable --now cliphist.service
 systemctl --user enable --now pipewire.service
 systemctl --user enable --now pipewire-pulse.service
 systemctl --user enable --now wireplumber.service
@@ -66,11 +71,10 @@ systemctl --user enable --now hypridle.service
 systemctl --user enable --now hyprpaper.service
 systemctl --user enable --now hyprpolkitagent.service
 systemctl --user enable --now mako.service
-systemctl --user enable --now waybar.service
 
-arrowed_prompt "Setting up zsh shell."
-sudo chsh -s /usr/bin/zsh $USER
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Post graphical
+systemctl --user enable waybar.service
+systemctl --user enable cliphist.service
 
 arrowed_prompt "Setting up login."
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/

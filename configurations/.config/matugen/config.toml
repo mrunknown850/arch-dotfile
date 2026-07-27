@@ -28,6 +28,10 @@ output_path = "~/.config/kitty/kitty.conf"
 input_path = "~/.config/matugen/templates/hyprcolor.lua"
 output_path = "~/.config/hypr/modules/color.lua"
 
+[templates.hyprlock]
+input_path = "~/.config/matugen/templates/hyprlock.conf"
+output_path = "~/.config/hypr/hyprlock.conf"
+
 [templates.rofi]
 input_path = "~/.config/matugen/templates/rofi.rasi"
 output_path = "~/.config/rofi/theme.rasi"

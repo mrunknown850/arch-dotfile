@@ -16,14 +16,14 @@ background {
  blur_passes = 2
  blur_size = 7
 
- color = rgb(#111418)
+ color = rgb(49668C)
  noise = 0.1
 }
 
 label {
   text = $TIME
   font_family = SF Pro weight=590
-  color = rgb(#ffffff)
+  color = rgb(131212)
   font_size = 100
   position = 0, 300
   halign = center
@@ -33,7 +33,7 @@ label {
 label {
   text = cmd[update:2000] date +"%A, %B %d"
   font_family = SF Pro Display Medium
-  color = rgb(#000000)
+  color = rgb(896957)
   position = 0, 390
   font_size = 23
   halign = center
@@ -43,14 +43,14 @@ label {
 label {
   text = $USER
   font_family = SF Pro weight=509
-  color = rgb(#fceaff)
+  color = rgb(A69B92)
   position = 0, -400
 }
 
 label {
   text = $FPRINTPROMPT
   font_family = SF Pro weight=509
-  color = rgb(#fceaff)
+  color = rgb(A69B92)
   font_size = 14
   position = 0, -450
 }
@@ -59,9 +59,9 @@ input-field {
   font_family = SF Pro weight=509
   size = 15%, 4%
   outline_thickness = 0
-  inner_color = rgba(#e9f0ff55)
+  inner_color = rgba(50, 50, 50, 0.3)
   outer_color = rgba(255, 255, 255, 0)
-  font_color = rgb(#000000)
+  font_color = rgb(D9C4B8)
   placeholder_text = Enter Password
   dots_center = false
   position = 0, 0

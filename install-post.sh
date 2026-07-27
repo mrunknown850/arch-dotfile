@@ -30,7 +30,7 @@ B_WHITE='\033[1;37m'
 
 # Helpers
 arrowed_prompt() { echo -e "${B_GREEN}==> ${NC} $1"; }
-REPO_URL="https://raw.githubusercontent.com/mrunknown850/arch-dotfile/master"
+REPO_URL="https://github.com/mrunknown850/arch-dotfile/master"
 
 
 printf "${UNDERLINE}${GREEN}=== MrUnknown850's Arch Linux post-install script ===${NC}"

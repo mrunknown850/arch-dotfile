@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # ==========================================
 # TEXT MODIFIERS
@@ -49,7 +50,7 @@ of the followings:
 Afterward, proceed with the installation and reboot into your system before 
 proceeding to the next step.
 "
-printf "${YELLOW}Press ${B_YELLOW}Enter${YELLOW} to continue to ${BOLD}archinstall...${NC}"
+printf "${WHITE}Press ${BOLD}Enter${WHITE} to continue to ${BOLD}archinstall...${NC}"
 read 
 
 arrowed_prompt "Proceeding with archinstall."

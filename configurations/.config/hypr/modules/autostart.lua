@@ -10,7 +10,7 @@
 --exec-once = hyprpm reload -n
 
 hl.on("hyprland.start", function()
-    -- hl.exec_cmd("hyprlock --immediate")
+    hl.exec_cmd("hyprlock")
     hl.exec_cmd("/home/MrUnknown850/.local/bin/switcher.sh")
     hl.exec_cmd("batsignal -w 25 -c 15 -d 5 -f 80")
     hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")

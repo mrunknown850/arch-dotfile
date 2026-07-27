@@ -57,6 +57,7 @@
         "btrfs-assistant",
         "cliphist",
         "cronie",
+        "curl",
         "fastfetch",
         "fwupd",
         "fzf",

@@ -1,0 +1,47 @@
+[config]
+version_check = false
+fallback_color = "#232634"
+prefer = "closest-to-fallback"
+caching = true
+expr_prefix = "{{"
+expr_postfix = "}}"
+block_prefix = "<*"
+block_postfix = "*>"
+contrast = 1.0
+source_color_index = 1
+
+[config.wallpaper]
+set = true
+command = "hyprctl hyprpaper wallpaper ',{{image}},'"
+
+
+[templates.mako]
+input_path = "~/.config/matugen/templates/mako"
+output_path = "~/.config/mako/config"
+post_hook = "makoctl reload"
+
+[templates.kitty]
+input_path = "~/.config/matugen/templates/kitty.conf"
+output_path = "~/.config/kitty/kitty.conf"
+
+[templates.hyprland]
+input_path = "~/.config/matugen/templates/hyprcolor.lua"
+output_path = "~/.config/hypr/modules/color.lua"
+
+[templates.rofi]
+input_path = "~/.config/matugen/templates/rofi.rasi"
+output_path = "~/.config/rofi/theme.rasi"
+
+[templates.waybar]
+input_path = "~/.config/matugen/templates/waybar.css"
+output_path = "~/.config/waybar/style.css"
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk3.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+post_hook = '~/.config/matugen/post-hooks/gtk.sh'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk4.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+post_hook = '~/.config/matugen/post-hooks/gtk.sh'

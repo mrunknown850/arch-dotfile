@@ -1,0 +1,121 @@
+{
+    "app_config": {
+        "audio_config": {
+            "audio": "pipewire"
+        },
+        "bluetooth_config": {
+            "enabled": true
+        },
+        "firewall_config": {
+            "firewall": "ufw"
+        },
+        "fonts_config": {
+            "fonts": [
+                "noto-fonts",
+                "noto-fonts-emoji",
+                "noto-fonts-cjk"
+            ]
+        },
+        "print_service_config": {
+            "enabled": true
+        }
+    },
+    "archinstall_language": "English",
+    "auth_config": {},
+    "bootloader_config": {
+        "bootloader": "Efistub",
+        "removable": false,
+        "uki": true
+    },
+    "custom_commands": [],
+    "hostname": "Acetyl-CoA",
+    "kernels": [
+        "linux-zen"
+    ],
+    "locale_config": {
+        "console_font": "default8x16",
+        "kb_layout": "us",
+        "sys_enc": "UTF-8",
+        "sys_lang": "en_US.UTF-8"
+    },
+    "mirror_config": {
+        "custom_repositories": [],
+        "custom_servers": [],
+        "mirror_regions": {},
+        "optional_repositories": []
+    },
+    "network_config": {
+        "type": "nm_iwd"
+    },
+    "ntp": true,
+    "packages": [
+        "apparmor",
+        "archlinux-xdg-menu",
+        "base-devel",
+        "batsignal",
+        "blueman",
+        "btrfs-assistant",
+        "cliphist",
+        "cronie",
+        "fastfetch",
+        "fwupd",
+        "fzf",
+        "git",
+        "gwenview",
+        "htop",
+        "hypridle",
+        "hyprland",
+        "hyprlock",
+        "hyprpicker",
+        "hyprpaper",
+        "hyprshot",
+        "xdg-desktop-portal-hyprland",
+        "hyprpolkitagent",
+        "intel-ucode",
+        "kitty",
+        "lazygit",
+        "mako",
+        "man-db",
+        "matugen",
+        "nautilus",
+        "neovim",
+        "network-manager-applet",
+        "openssh",
+        "pamixer",
+        "papirus-icon-theme",
+        "pavucontrol",
+        "reflector",
+        "rofi",
+        "sbctl",
+        "sof-firmware",
+        "stow",
+        "tlp",
+        "uwsm",
+        "waybar",
+        "zathura",
+        "zathura-pdf-poppler",
+        "zsh"
+    ],
+    "pacman_config": {
+        "color": true,
+        "parallel_downloads": 5
+    },
+    "profile_config": {
+        "gfx_driver": null,
+        "greeter": null,
+        "profile": {
+            "custom_settings": {},
+            "details": [],
+            "main": "Minimal"
+        }
+    },
+    "script": "guided",
+    "silent": false,
+    "services": [],
+    "swap": {
+        "algorithm": "zstd",
+        "enabled": true
+    },
+    "timezone": "Asia/Ho_Chi_Minh",
+    "version": "4.4"
+}

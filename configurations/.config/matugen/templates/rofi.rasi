@@ -1,8 +1,8 @@
 * {
   primary: {{colors.primary.default.hex}};
-  border: {{colors.outline.default.hex}};
-  bg: {{colors.surface.default.hex}};
-  highlight: {{colors.surface_variant.default.hex}};
+  border: {{colors.outline.default.hex}}80;
+  bg: {{colors.surface.default.hex}}99; /* alpha suffix on window only now: FF=opaque, CC=~80%, 99=~60%, 80=~50% */
+  highlight: {{colors.surface_variant.default.hex}}70;
   text-color: {{colors.on_surface.default.hex}};
   
   background-color: @bg;
@@ -31,13 +31,13 @@ textbox-prompt-colon {
   expand: false;
   padding: 0px 15px 0px 0px;
   text-color: @text-color;
-  background-color: @highlight;
+  background-color: transparent;
 }
 
 entry {
   placeholder: "";
   placeholder-color: @bg;
-  background-color: @highlight;
+  background-color: transparent;
   text-color: @text-color;
   expand: true;
 }
@@ -50,7 +50,7 @@ inputbar {
 }
 
 listview {
-  background-color: @bg;
+  background-color: transparent;
   columns: 1;
   lines: 7;
   padding: 20px 0px;
@@ -63,7 +63,7 @@ listview {
 }
 
 mainbox {
-  background-color: @bg;
+  background-color: transparent;
   children: [inputbar,listview,mode-switcher];
 }
 
@@ -71,13 +71,13 @@ element {
   orientation: horizontal;
   padding: 7px 10px;
   
-  background-color: @bg;
+  background-color: transparent;
 }
 
 element-text {
   margin: 0 0px;
   
-  background-color: inherit;
+  background-color: transparent;
   highlight: @primary;
   text-color: @text-color;
 }
@@ -92,7 +92,7 @@ element selected {
 }
 
 mode-switcher {
-  background-color: @bg;
+  background-color: transparent;
   spacing: 20;
   margin: 10 20 10 20;
   padding: 0 0 0 0;
@@ -103,7 +103,7 @@ button {
   padding: 10 0;
   
   text-color: @text-color;
-  background-color: @bg;
+  background-color: transparent;
 }
 
 button selected {
@@ -111,3 +111,4 @@ button selected {
   text-color: @text-color;
   background-color: @highlight;
 }
+

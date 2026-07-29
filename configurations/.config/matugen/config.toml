@@ -12,8 +12,11 @@ source_color_index = 1
 
 [config.wallpaper]
 set = true
-command = "~/.config/matugen/post-hooks/update-wallpaper.sh {{image}}"
+command = "hyprctl hyprpaper wallpaper ',{{image}},'"
 
+[templates.hyprpaper]
+input_path = "~/.config/matugen/templates/hyprpaper.conf"
+output_path = "~/.config/hypr/hyprpaper.conf"
 
 [templates.mako]
 input_path = "~/.config/matugen/templates/mako"

@@ -3,6 +3,7 @@ user_credentials.json
 # Matugen-generated contents
 configurations/.config/mako/config
 configurations/.config/kitty/kitty.conf
+configurations/.config/hypr/hyprpaper.conf
 configurations/.config/hypr/modules/color.lua
 configurations/.config/hypr/hyprlock.conf
 configurations/.config/rofi/theme.rasi

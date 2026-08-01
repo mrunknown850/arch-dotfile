@@ -15,13 +15,16 @@ local menu = 'pkill rofi || rofi -icon-theme "Papirus" -show drun -run-command "
 local power = 'pkill rofi || rofi -icon-theme "Papirus" -show powermenu'
 
 -- Quick launch
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
-hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd(power), { release = true })
+hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
+
+hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd(power), { release = true })
+
+-- Keyboard stuffs
 hl.bind(mainMod .. " + period", hl.dsp.exec_cmd(emoji))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
 hl.bind(mainMod .. " + ALT + V", hl.dsp.exec_cmd(clear_cb))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(volume_script .. " --inc"), { locked = true, repeating = true })
@@ -40,3 +43,4 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 -- Screenshot
 hl.bind("Print", hl.dsp.exec_cmd("hyprshot -o ~/Pictures/Screenshots -m output"))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd("hyprshot -o ~/Pictures/Screenshots -m region"))
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("hyprshot -o ~/Pictures/Screenshots -m output -m active"))

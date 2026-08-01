@@ -27,8 +27,15 @@ hl.config({
 	},
 
 	-- Layout specific
+	dwindle = {
+		preserve_split = true,
+	},
+
 	master = {
-		new_status = "master",
+		new_status = "slave",
+		mfact = 0.6,
+		new_on_top = true,
+		orientation = left,
 	},
 
 	-- Misc

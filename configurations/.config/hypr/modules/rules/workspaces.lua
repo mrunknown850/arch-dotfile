@@ -18,6 +18,16 @@ hl.workspace_rule({
 	layout_opts = {
 		orientation = "left",
 	},
+	monitor = "eDP-1",
+	default = true,
+})
+
+-- Float default on magic
+-- hl.window_rule({ matchworkspace = "special:magic", float = true })
+hl.window_rule({
+	match = { workspace = "special:magic" },
+	float = true,
+	size = { 800, 600 },
 })
 
 -- Smart Gaps

@@ -3,6 +3,9 @@
   <h3>Simple - Minimal - Practical</h3>
 </div>
 
+> [!NOTE]
+> Legacy branch: This branch will act as an archive before migrating to `quickshell`. Please checkout the `master` branch for the latest iteration.
+
 > [!IMPORTANT]
 > Hyprland 0.55 and above only: Due to the recent deprecation of Hyprlang, it is required that you update to Hyprland 0.55 and above. For distributions that have not shipped the needed version, consider building Hyprland from [source](https://github.com/hyprwm/hyprland).
 

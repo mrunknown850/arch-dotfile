@@ -11,22 +11,22 @@ local options = {
 	{
 		name = "Shut down",
 		icon = "system-shutdown",
-		command = "hyprshutdown -t 'Shutting down...' -p 'systemctl poweroff'",
+		command = "uwsm app -- hyprshutdown -t 'Shutting down...' -p `shutdown now`",
 	},
 	{
 		name = "Restart",
 		icon = "system-reboot",
-		command = "hyprshutdown -t 'Rebooting...' -p 'systemctl reboot'",
+		command = "uwsm app -- hyprshutdown -t 'Rebooting...' -p `reboot`",
 	},
 	{
 		name = "Lock",
 		icon = "system-lock-screen",
-		command = "hyprlock",
+		command = "loginctl lock-session",
 	},
 	{
 		name = "Log out",
 		icon = "system-log-out",
-		command = "hyprshutdown -t 'Logging out...'",
+		command = "uwsm app -- hyprshutdown -t 'Logging out...'",
 	},
 }
 

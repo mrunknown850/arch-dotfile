@@ -100,6 +100,10 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias timem="/usr/bin/time -f '\nMem: %MKb\nTime: %e' "
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 autoload -U compinit; compinit
+
+# Created by `pipx` on 2026-08-23 02:56:52
+export PATH="$PATH:/home/mrunknown850/.local/bin"

@@ -3,16 +3,16 @@
 --##
 
 -- Variables
-local volume_script = "$HOME/.config/hypr/scripts/volume"
-local backlight_script = "$HOME/.config/hypr/scripts/backlight"
-local shifter = "$HOME/.config/hypr/shift-workspace.sh"
+local emoji = "rofimoji --action clipboard"
+local volume_script = "$HOME/.config/hypr/scripts/volume.sh"
+local backlight_script = "$HOME/.config/hypr/scripts/backlight.sh"
 local clipboard = "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-local clear_cb = "cliphist wipe"
+local clear_cb = "cliphist wipe && notify-send 'Clipboard Cleared'"
 local terminal = "uwsm app -- kitty -d=last_reported"
-local fileManager = "uwsm app -- nautilus"
-local emoji = "bemoji -n"
+local fileManager = "uwsm app -- yazi"
 local menu = 'pkill rofi || rofi -icon-theme "Papirus" -show drun -run-command "uwsm app -- {cmd}"'
 local power = 'pkill rofi || rofi -icon-theme "Papirus" -show powermenu'
+local projection = 'pkill rofi || rofi -icon-theme "Papirus" -show projection'
 
 -- Quick launch
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
@@ -20,11 +20,12 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
 
 hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd(power), { release = true })
+hl.bind("XF86Display", hl.dsp.exec_cmd(projection))
 
 -- Keyboard stuffs
-hl.bind(mainMod .. " + period", hl.dsp.exec_cmd(emoji))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
-hl.bind(mainMod .. " + ALT + V", hl.dsp.exec_cmd(clear_cb))
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(clear_cb))
+hl.bind("CTRL + PERIOD", hl.dsp.exec_cmd(emoji))
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(volume_script .. " --inc"), { locked = true, repeating = true })
@@ -44,3 +45,9 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 hl.bind("Print", hl.dsp.exec_cmd("hyprshot -o ~/Pictures/Screenshots -m output"))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd("hyprshot -o ~/Pictures/Screenshots -m region"))
 hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("hyprshot -o ~/Pictures/Screenshots -m output -m active"))
+
+hl.bind(mainMod .. " + F12", function()
+	hl.timer(function()
+		hl.dispatch(hl.dsp.dpms({ action = "disable" }))
+	end, { timeout = 500, type = "oneshot" })
+end)

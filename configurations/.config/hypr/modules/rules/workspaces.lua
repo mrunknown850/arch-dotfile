@@ -2,6 +2,22 @@
 -- HYPRLAND WORKSPACES RULE
 --#########################
 
+hl.workspace_rule({
+	workspace = "special:chat",
+	layout = "scrolling",
+	layout_opts = {
+		column_width = 1,
+	},
+})
+
+hl.workspace_rule({
+	workspace = "special:term",
+	layout = "scrolling",
+	layout_opts = {
+		column_width = 0.5,
+	},
+})
+
 for i = 1, 5 do
 	if i ~= 3 then
 		hl.workspace_rule({
@@ -24,6 +40,11 @@ hl.workspace_rule({
 
 -- Float default on magic
 -- hl.window_rule({ matchworkspace = "special:magic", float = true })
+hl.window_rule({
+	match = { workspace = "3" },
+	opacity = "1.0 1.0 1.0",
+})
+
 hl.window_rule({
 	match = { workspace = "special:magic" },
 	float = true,

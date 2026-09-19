@@ -192,5 +192,10 @@
     "max-length": 25,
     "tooltip": true,
     "tooltip-format": "{:%a, %b %d}"
+  },
+  "hyprland/workspaces":{
+    "show-special": true,
+    "special-visible-only": true,
+    "hide-active": true
   }
 }

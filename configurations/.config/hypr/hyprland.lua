@@ -3,7 +3,7 @@
 --#########################
 
 hl.monitor({
-	output = "",
+	output = "eDP-1",
 	mode = "preferred",
 	position = "auto",
 	scale = "1",
@@ -16,6 +16,9 @@ hl.env("XDG_MENU_PREFIX", "arch-")
 hl.env("HYPRCURSOR_SIZE", "40")
 hl.env("DXVK_ASYNC", "1")
 hl.env("SDL_VIDEODRIVER", "wayland")
+-- hl.env("XMODIFIERS", "@im=fcitx")
+-- hl.env("GTK_IM_MODULE", "fcitx")
+-- hl.env("QT_IM_MODULE", "fcitx")
 
 require("modules/autostart")
 
@@ -38,3 +41,7 @@ require("modules/rules/layers")
 -- Configs
 require("modules/input")
 require("modules/general")
+
+-- -- Hyprpicker
+-- package.path = package.path .. ";" .. os.getenv("HOME") .. "/.config/hypremoji/?.lua"
+-- require("hypremoji")

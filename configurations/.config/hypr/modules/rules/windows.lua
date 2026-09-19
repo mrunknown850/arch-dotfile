@@ -9,24 +9,42 @@ hl.window_rule({
 	opacity = "0.95 0.7 1.0",
 })
 
--- App specific
+-- Chat app filter
 hl.window_rule({
-	name = "Thunderbird",
-	match = { class = "org.mozilla.Thunderbird" },
+	name = "Chats",
+	match = {
+		title = "^(Zalo|Messenger|Discord)$",
+	},
 	workspace = "special:chat",
 })
 
+-- Media
 hl.window_rule({
-	name = "Zoom gadgets",
-	match = { class = "zoom" },
-	float = true,
+	name = "Media",
+	match = {
+		title = "^(YouTube Music)$",
+	},
+	workspace = "special:media",
 })
 
+-- App specific
 hl.window_rule({
 	name = "Zoom",
-	match = {
-		class = "zoom",
-		title = "Meeting",
-		fullscreen = true,
-	},
+	match = { class = "zoom" },
+	workspace = 2,
+})
+
+-- Zoom stuffs
+hl.window_rule({
+	match = { class = "^(zoom)$" },
+	float = true,
+	suppress_event = "maximize",
+})
+
+-- Terminal xdg
+hl.window_rule({
+	match = { title = "termfilechooser" },
+	float = true,
+	max_size = { 1000, 600 },
+	size = { 1000, 600 },
 })

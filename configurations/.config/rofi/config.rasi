@@ -1,5 +1,5 @@
 configuration {
-  modi: "drun,powermenu:~/.config/rofi/powermenu.lua";
+  modi: "drun,powermenu:~/.config/rofi/powermenu.lua,projection:~/.config/rofi/projection.lua";
   
   me-accept-entry: "MousePrimary";
   me-select-entry: "";
@@ -17,6 +17,7 @@ configuration {
 
   display-drun: "Apps";
   display-powermenu: "Power";
+  display-projection: "Projection";
 
   combi-modi: "drun,run";
   sort: true;

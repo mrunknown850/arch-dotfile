@@ -1,7 +1,6 @@
 --#########################
 -- HYPRLAND GENERAL CONFIG
 --#########################
-
 hl.config({
 	-- General
 	general = {
@@ -36,6 +35,11 @@ hl.config({
 		mfact = 0.6,
 		new_on_top = true,
 		orientation = left,
+	},
+
+	scrolling = {
+		column_width = 0.6,
+		direction = right,
 	},
 
 	-- Misc

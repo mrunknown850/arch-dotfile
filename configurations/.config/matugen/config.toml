@@ -18,6 +18,10 @@ command = "hyprctl hyprpaper wallpaper ',{{image}},'"
 input_path = "~/.config/matugen/templates/hyprpaper.conf"
 output_path = "~/.config/hypr/hyprpaper.conf"
 
+[templates.quickshell]
+input_path = "~/.config/matugen/templates/Theme.qml"
+output_path = "~/.config/quickshell/Theme.qml"
+
 [templates.mako]
 input_path = "~/.config/matugen/templates/mako"
 output_path = "~/.config/mako/config"

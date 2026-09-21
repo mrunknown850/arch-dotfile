@@ -7,6 +7,10 @@ local function cf()
   local lspconfig = require "lspconfig"
   local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+  lspconfig.qmlls.setup {
+    cmd = { "qmlls", "-E" },
+  }
+
   lspconfig.clangd.setup {
     cmd = { "clangd", "--clang-tidy" },
     filetypes = { "c", "cpp", "objc", "objcpp" },

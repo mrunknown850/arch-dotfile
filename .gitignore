@@ -10,3 +10,4 @@ configurations/.config/hypr/hyprlock.conf
 configurations/.config/rofi/theme.rasi
 configurations/.config/waybar/style.css
 
+/configurations/.config/quickshell/Theme.qml

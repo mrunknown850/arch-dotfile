@@ -3,13 +3,14 @@
   <h3>Simple - Minimal - Practical</h3>
 </div>
 
+> [!NOTE]
+> This dotfile is undergoing the process of migrating to quickshell for advance ricing. Checkout the `legacy` branch for the old system.
+
 > [!IMPORTANT]
 > Hyprland 0.55 and above only: Due to the recent deprecation of Hyprlang, it is required that you update to Hyprland 0.55 and above. For distributions that have not shipped the needed version, consider building Hyprland from [source](https://github.com/hyprwm/hyprland).
 
 ## Screenshots
-![Preview_1](./.github/preview_1.png)
-![Preview_2](./.github/preview_2.png)
-![Preview_3](./.github/preview_3.png)
+_To be added..._
 
 ## 0. Table of content
 ## 1. What is it?
@@ -26,7 +27,7 @@ What's included?
 |:--- |:--- |:--- |:--- |
 | Shell | zsh | WM | Hyprland |
 | Editor | neovim | Terminal | kitty |
-| Launcher | rofi | Statusbar | waybar |
+| Launcher | rofi | Statusbar | quickshell |
 | File Manager | nautilus | Notification Daemon | mako |
 
 ## 2. Installation

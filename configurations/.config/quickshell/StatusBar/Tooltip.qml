@@ -14,7 +14,7 @@ PopupWindow {
 
     property int radius: 5
 
-    property int delay: 400
+    property int delay: 300
     property int offset: 8
 
     visible: false
@@ -55,7 +55,7 @@ PopupWindow {
 
         Behavior on opacity {
             NumberAnimation {
-                duration: 120
+                duration: 200
             }
         }
     }

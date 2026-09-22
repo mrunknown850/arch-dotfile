@@ -51,8 +51,9 @@ PanelWindow {
         anchors.right: parent.right
         anchors.verticalCenter: parent.verticalCenter
         anchors.rightMargin: parent.height * 0.4
-        spacing: parent.height * 0.1
+        spacing: parent.height * 0.05
 
+        Tray {}
         ControlPanel {}
         Clock {}
     }

@@ -2,40 +2,59 @@ import QtQuick
 import Quickshell
 import ".."
 
-Rectangle {
-    id: root
-
-    property int panelSize: Math.round(Theme.fontSize * 1.8)
-
-    implicitWidth: text.implicitWidth * 1.1
-    implicitHeight: text.implicitHeight * 1.5
-
-    radius: 5
-    color: hoverHandler.hovered ? Qt.alpha(Theme.colorOnSurface, 0.1) : Qt.alpha(Theme.colorOnSurface, 0)
-    Behavior on color {
-        ColorAnimation {
-            duration: 100
-        }
-    }
+Item {
+    id: hitbox
+    width: root.implicitWidth
+    height: parent.parent.height
     HoverHandler {
         id: hoverHandler
+        onHoveredChanged: {
+            if (hovered)
+                tooltip.startHover();
+            else
+                tooltip.stopHover();
+        }
     }
 
-    Text {
-        id: text
+    Rectangle {
+        id: root
+
+        property int panelSize: Math.round(Theme.fontSize * 1.8)
 
         anchors.centerIn: parent
-        text: Qt.formatDateTime(clock.date, "hh:mm AP")
+        implicitWidth: text.implicitWidth * 1.2
+        implicitHeight: hitbox.parent.parent.height * 0.8
 
-        color: Theme.colorOnSurface
-        font.family: Theme.fontFamily
-        font.pixelSize: Theme.fontSize
-        font.weight: 600
+        radius: 5
+        color: hoverHandler.hovered ? Qt.alpha(Theme.colorOnSurface, 0.1) : Qt.alpha(Theme.colorOnSurface, 0)
+        Behavior on color {
+            ColorAnimation {
+                duration: 100
+            }
+        }
 
-        SystemClock {
-            id: clock
-            // 2. Qualify the enum with SystemClock
-            precision: SystemClock.Seconds
+        Text {
+            id: text
+
+            anchors.centerIn: parent
+            text: Qt.formatDateTime(clock.date, "hh:mm AP")
+
+            color: Theme.colorOnSurface
+            font.family: Theme.fontFamily
+            font.pixelSize: Theme.fontSize
+            font.weight: 600
+
+            SystemClock {
+                id: clock
+                precision: SystemClock.Seconds
+            }
+        }
+
+        Tooltip {
+            id: tooltip
+            target: root
+
+            text: Qt.formatDateTime(clock.date, "ddd, dd/MM/yyyy")
         }
     }
 }

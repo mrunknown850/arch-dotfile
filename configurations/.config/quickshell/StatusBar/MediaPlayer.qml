@@ -12,7 +12,7 @@ Item {
 
     visible: player !== null
     implicitWidth: visible ? layout.implicitWidth : 0
-    implicitHeight: visible ? layout.implicitHeight : 0
+    implicitHeight: visible ? parent.parent.height : 0
 
     function getSymbol() {
         return player?.isPlaying ? "⏸" : "▶";

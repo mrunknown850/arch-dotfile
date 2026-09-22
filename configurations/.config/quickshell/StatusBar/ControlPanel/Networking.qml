@@ -13,6 +13,8 @@ Item {
     implicitHeight: panelSize
     Layout.alignment: Qt.AlignVCenter
 
+    property string wifiName: ""
+
     function noInternet() {
         return Networking.connectivity === NetworkConnectivity.Limited || Networking.connectivity === NetworkConnectivity.Portal;
     }
@@ -33,6 +35,8 @@ Item {
             for (const net of dev.networks.values) {
                 if (!net.connected)
                     continue;
+
+                root.wifiName = net.name;
 
                 if (noInternet())
                     return "wifi-no-internet";
@@ -64,6 +68,36 @@ Item {
         if (Networking.canCheckConnectivity) {
             Networking.connectivityCheckEnabled = true;
             Networking.checkConnectivity();
+        }
+    }
+
+    HoverHandler {
+        onHoveredChanged: {
+            if (hovered)
+                tooltip.startHover();
+            else
+                tooltip.stopHover();
+        }
+    }
+
+    Tooltip {
+        id: tooltip
+        target: root
+
+        text: {
+            var status = root.getStatus();
+            if (status === "offline")
+                return "Offline";
+            if (status === "wired-no-internet")
+                return "No internet access";
+            if (status === "wired")
+                return "Ethernet Connected";
+            if (status === "wifi-no-internet")
+                return `${root.wifiName} - No internet access`;
+            if (status === "wifi-1" || status === "wifi-2" || status === "wifi-3" || status === "wifi-4")
+                return `${root.wifiName}`;
+            if (status === "wifi-disconnected")
+                return "Disconnected";
         }
     }
 }

@@ -64,8 +64,8 @@ Item {
 
         text: {
             if (root.dev.state === UPowerDeviceState.Charging)
-                return `Full in ${root.formatDuration(root.dev.timeToFull)} - ${root.dev.percentage * 100}%`;
-            return `Empty in ${root.formatDuration(root.dev.timeToEmpty)} - ${root.dev.percentage * 100}%`;
+                return `Full in ${root.formatDuration(root.dev.timeToFull)} - ${Math.round(root.dev.percentage * 100)}%`;
+            return `Empty in ${root.formatDuration(root.dev.timeToEmpty)} - ${Math.round(root.dev.percentage * 100)}%`;
         }
     }
 }

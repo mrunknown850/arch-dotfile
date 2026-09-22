@@ -42,4 +42,20 @@ Item {
             return `../assets/controlpanel/audio/volume-${root.getVolumeTier(root.volume)}.svg`;
         }
     }
+
+    HoverHandler {
+        onHoveredChanged: {
+            if (hovered)
+                tooltip.startHover();
+            else
+                tooltip.stopHover();
+        }
+    }
+
+    Tooltip {
+        id: tooltip
+        target: root
+
+        text: `Volume: ${Math.round(root.volume * 100)}%`
+    }
 }

@@ -7,7 +7,7 @@ import ".."
 PanelWindow {
     id: bar
 
-    property var scale: 0.03
+    property var scale: 0.032
 
     anchors {
         left: true
@@ -34,7 +34,7 @@ PanelWindow {
         anchors.left: parent.left
         anchors.verticalCenter: parent.verticalCenter
         anchors.leftMargin: parent.height * 0.2
-        spacing: parent.height * 0.2
+        spacing: parent.height * 0.35
 
         WorkspaceContainer {}
         MediaPlayer {}

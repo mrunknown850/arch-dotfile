@@ -10,8 +10,8 @@ Item {
     readonly property bool active: workspace.active
     readonly property bool occupied: workspace.toplevels.values.length > 0
 
-    implicitWidth: parent.parent.height * 0.6
-    implicitHeight: parent.parent.height
+    implicitWidth: parent.parent.parent.height * 0.7
+    implicitHeight: parent.parent.parent.height
 
     Text {
         anchors.centerIn: parent
@@ -27,7 +27,7 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
 
-        width: root.active ? parent.parent.height * 0.65 : 0
+        width: root.active ? parent.parent.height * 0.75 : 0
         height: 2
         color: Theme.outline
 

@@ -1,10 +1,14 @@
 import QtQuick
+import Quickshell
+import "../.."
 import ".."
 
 Item {
     id: hitbox
-    width: layout.implicitWidth
-    height: parent.parent.height
+
+    property bool isOpened: false
+    implicitWidth: layout.implicitWidth
+    implicitHeight: parent.parent.height
     HoverHandler {
         id: hoverHandler
     }
@@ -12,14 +16,12 @@ Item {
     Rectangle {
         id: root
 
-        property bool isOpened: false
-
         anchors.centerIn: parent
         implicitWidth: layout.implicitWidth
         implicitHeight: layout.implicitHeight
 
         radius: 5
-        color: hoverHandler.hovered || isOpened ? Qt.alpha(Theme.colorOnSurface, 0.1) : Qt.alpha(Theme.colorOnSurface, 0)
+        color: hoverHandler.hovered || hitbox.isOpened ? Qt.alpha(Theme.colorOnSurface, 0.1) : Qt.alpha(Theme.colorOnSurface, 0)
         Behavior on color {
             ColorAnimation {
                 duration: 100
@@ -29,10 +31,10 @@ Item {
         VectorIcon {
             id: layout
             anchors.centerIn: parent
-            size: hitbox.parent.parent.height * 0.8
+            size: hitbox.implicitHeight * 0.8
             fillColor: Theme.colorOnSurface
             iconSrc: "../assets/tray/chevron.svg"
-            rotation: root.isOpened ? 180 : 0
+            rotation: hitbox.isOpened ? 180 : 0
             Behavior on rotation {
                 NumberAnimation {
                     duration: 200
@@ -42,8 +44,13 @@ Item {
         }
     }
 
+    TrayMenu {
+        target: hitbox
+        visible: hitbox.isOpened
+    }
+
     MouseArea {
         anchors.fill: hitbox
-        onClicked: root.isOpened = !root.isOpened
+        onClicked: hitbox.isOpened = !hitbox.isOpened
     }
 }

@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell
 import QtQuick.Layouts
 import "./Workspace"
+import "./Tray"
 import ".."
 
 PanelWindow {

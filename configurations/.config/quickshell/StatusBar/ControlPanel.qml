@@ -4,8 +4,10 @@ import "./ControlPanel/"
 import ".."
 
 Item {
+    id: hitbox
     width: root.implicitWidth
     height: parent.parent.height
+    property bool isOpened: true
     HoverHandler {
         id: hoverHandler
     }
@@ -20,7 +22,7 @@ Item {
         implicitHeight: layout.implicitHeight * 1.2
 
         radius: 5
-        color: hoverHandler.hovered ? Qt.alpha(Theme.colorOnSurface, 0.1) : Qt.alpha(Theme.colorOnSurface, 0)
+        color: hoverHandler.hovered || parent.isOpened ? Qt.alpha(Theme.colorOnSurface, 0.1) : Qt.alpha(Theme.colorOnSurface, 0)
         Behavior on color {
             ColorAnimation {
                 duration: 100
@@ -43,5 +45,14 @@ Item {
                 panelSize: root.panelSize
             }
         }
+    }
+    ActionCenter {
+        target: hitbox
+        visible: hitbox.isOpened
+    }
+
+    MouseArea {
+        anchors.fill: hitbox
+        onClicked: hitbox.isOpened = !hitbox.isOpened
     }
 }

@@ -11,15 +11,18 @@ QtObject {
     readonly property color primary: "{{colors.primary.default.hex}}"
     readonly property color colorOnPrimary: "{{colors.on_primary.default.hex}}"
     readonly property color primaryContainer: "{{colors.primary_container.default.hex}}"
+    readonly property color colorOnPrimaryContainer: "{{colors.on_primary_container.default.hex}}"
     readonly property color inversePrimary: "{{colors.inverse_primary.default.hex}}"
 
     readonly property color secondary: "{{colors.secondary.default.hex}}"
     readonly property color colorOnSecondary: "{{colors.on_secondary.default.hex}}"
     readonly property color secondaryContainer: "{{colors.secondary_container.default.hex}}"
+    readonly property color colorOnSecondaryContainer: "{{colors.on_secondary_container.default.hex}}"
 
     readonly property color tertiary: "{{colors.tertiary.default.hex}}"
     readonly property color colorOnTertiary: "{{colors.on_tertiary.default.hex}}"
     readonly property color tertiaryContainer: "{{colors.tertiary_container.default.hex}}"
+    readonly property color colorOnTertiaryContainer: "{{colors.on_tertiary_container.default.hex}}"
 
     readonly property color outline: "{{colors.outline.default.hex}}"
     readonly property color outlineVariant: "{{colors.outline_variant.default.hex}}"

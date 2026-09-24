@@ -50,9 +50,20 @@ PopupWindow {
                 title: "TLinker"
                 iconSrc: "../assets/actioncenter/wifi.svg"
             }
-            Slider {
+            ExtendableSlider {
                 Layout.columnSpan: 3
                 Layout.fillWidth: true
+
+                iconSrc: "../assets/actioncenter/wifi.svg"
+            }
+            ExtendableSlider {
+                Layout.columnSpan: 3
+                Layout.fillWidth: true
+
+                iconSrc: "../assets/actioncenter/wifi.svg"
+                triggerFunction: function () {
+                    console.debug("Slider More!");
+                }
             }
         }
     }

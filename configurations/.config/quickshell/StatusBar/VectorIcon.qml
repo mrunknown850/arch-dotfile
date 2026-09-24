@@ -10,6 +10,7 @@ Rectangle {
     property color fillColor: Theme.colorOnSurface
     property int size: 30
     property real iconScale: 0.8
+    property real animationDuration: 100
 
     implicitWidth: size
     implicitHeight: size
@@ -37,5 +38,10 @@ Rectangle {
         property var source: icon
         property color tint: root.fillColor
         fragmentShader: "../assets/tint.frag.qsb"
+    }
+    Behavior on fillColor {
+        ColorAnimation {
+            duration: root.animationDuration
+        }
     }
 }

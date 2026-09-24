@@ -3,6 +3,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import "./common"
+import "./apps"
 import "../.."
 import ".."
 
@@ -35,35 +36,21 @@ PopupWindow {
             anchors.fill: parent
             anchors.margins: root.padding
             columns: 3
-            rowSpacing: root.spacing
+            rowSpacing: root.spacing * 1.3
             columnSpacing: root.spacing
 
-            Toggle {
-                title: "Toggle"
-                iconSrc: "../assets/actioncenter/wifi.svg"
-            }
-            Linker {
-                title: "Linker"
-                iconSrc: "../assets/actioncenter/wifi.svg"
-            }
-            ToggleLinker {
-                title: "TLinker"
-                iconSrc: "../assets/actioncenter/wifi.svg"
-            }
-            ExtendableSlider {
+            AppWifi {}
+            AppBluetooth {}
+            AppVPN {}
+            AppAwake {}
+            AppProjection {}
+            AppAudio {
                 Layout.columnSpan: 3
                 Layout.fillWidth: true
-
-                iconSrc: "../assets/actioncenter/wifi.svg"
             }
-            ExtendableSlider {
+            AppBacklight {
                 Layout.columnSpan: 3
                 Layout.fillWidth: true
-
-                iconSrc: "../assets/actioncenter/wifi.svg"
-                triggerFunction: function () {
-                    console.debug("Slider More!");
-                }
             }
         }
     }

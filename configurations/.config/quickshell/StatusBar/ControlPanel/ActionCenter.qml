@@ -10,6 +10,7 @@ import ".."
 PopupWindow {
     id: root
     required property ControlPanel target
+    required property var panelWindow
 
     anchor {
         item: target
@@ -42,7 +43,9 @@ PopupWindow {
             AppWifi {}
             AppBluetooth {}
             AppVPN {}
-            AppAwake {}
+            AppAwake {
+                window: root.panelWindow
+            }
             AppProjection {}
             AppAudio {
                 Layout.columnSpan: 3

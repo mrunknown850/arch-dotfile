@@ -8,6 +8,7 @@ Item {
     width: root.implicitWidth
     height: parent.parent.height
     property bool isOpened: true
+    required property var panelWindow
     HoverHandler {
         id: hoverHandler
     }
@@ -49,6 +50,7 @@ Item {
     ActionCenter {
         target: hitbox
         visible: hitbox.isOpened
+        panelWindow: hitbox.panelWindow
     }
 
     MouseArea {

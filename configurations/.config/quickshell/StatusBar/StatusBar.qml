@@ -55,7 +55,9 @@ PanelWindow {
         spacing: parent.height * 0.05
 
         Tray {}
-        ControlPanel {}
+        ControlPanel {
+            panelWindow: bar
+        }
         Clock {}
     }
 }

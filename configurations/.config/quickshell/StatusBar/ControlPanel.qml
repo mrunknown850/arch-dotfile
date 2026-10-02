@@ -7,7 +7,7 @@ Item {
     id: hitbox
     width: root.implicitWidth
     height: parent.parent.height
-    property bool isOpened: true
+    property bool isOpened: false
     required property var panelWindow
     HoverHandler {
         id: hoverHandler

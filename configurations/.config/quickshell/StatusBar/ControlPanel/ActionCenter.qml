@@ -22,6 +22,8 @@ PopupWindow {
 
     property int padding: 13
     property int spacing: 12
+    grabFocus: true
+    onVisibleChanged: target.isOpened = visible
 
     implicitWidth: grid.implicitWidth + padding * 2
     implicitHeight: grid.implicitHeight + padding * 2

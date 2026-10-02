@@ -55,6 +55,7 @@ PanelWindow {
         spacing: parent.height * 0.05
 
         Tray {}
+        Cloud {}
         ControlPanel {
             panelWindow: bar
         }

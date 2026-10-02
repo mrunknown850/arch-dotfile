@@ -1,2 +1,2 @@
-
 singleton Backlight 1.0 Backlight.qml
+singleton Rclone 1.0 Rclone.qml
